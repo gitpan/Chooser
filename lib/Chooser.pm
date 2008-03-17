@@ -94,12 +94,28 @@ sub runcheck{
 		chomp($hostname);
 		
 		if ($hostname =~ /$args{regex}/){
-			$success=1;
+			$returned=1;
 		};
-		$returned=1;
+		$success=1;
 	};
 	
 	if($check eq "netidentflag"){
+		my $flagdir='/var/db/netident'
+		
+		if (defined($ENV{NETIDENTFLAGDIR})){
+			$flagdir=$ENV{NETIDENTFLAGDIR};
+		};
+		
+		if(defined{$args{flag}}){
+			if (-f $flagdir."/".$args{flag}){
+				$success=1;
+				$returned=1;
+			}else{
+				$returned=0;
+			};
+		}else{
+			$success=0;
+		};
 		
 	};
 	
@@ -241,11 +257,11 @@ Chooser - A system for choosing a value for something.
 
 =head1 VERSION
 
-Version 1.0.0
+Version 1.1.0
 
 =cut
 
-our $VERSION = '1.0.0';
+our $VERSION = '1.1.0';
 
 
 =head1 SYNOPSIS
@@ -396,6 +412,14 @@ an error condition. The second returned value is the value that is checked again
 expect value.
 
 The arguement "eval" is the arguement that contains the code used for this.
+
+=head2 netidentflag
+
+This tests to see if a flag created by netident is present. The directory used is the
+default netident flag directory, unless the enviromental variable 'NETIDENTFLAGDIR' is
+set.
+
+The arguement "flag" is used to specify the flag to look for.
 
 =head1 AUTHOR
 
