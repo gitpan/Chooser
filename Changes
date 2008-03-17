@@ -1,5 +1,8 @@
 Revision history for Chooser
 
+1.1.1	 2008-03-17/5:30
+		Whoops. Released the last one with a small bug that made it unusabled. Fixed.
+
 1.1.0	 2008-03-17/5:15
 		Added in netident support.
 

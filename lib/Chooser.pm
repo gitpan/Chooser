@@ -100,7 +100,7 @@ sub runcheck{
 	};
 	
 	if($check eq "netidentflag"){
-		my $flagdir='/var/db/netident'
+		my $flagdir='/var/db/netident';
 		
 		if (defined($ENV{NETIDENTFLAGDIR})){
 			$flagdir=$ENV{NETIDENTFLAGDIR};
@@ -257,11 +257,11 @@ Chooser - A system for choosing a value for something.
 
 =head1 VERSION
 
-Version 1.1.0
+Version 1.1.1
 
 =cut
 
-our $VERSION = '1.1.0';
+our $VERSION = '1.1.1';
 
 
 =head1 SYNOPSIS
