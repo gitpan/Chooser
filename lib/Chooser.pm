@@ -257,11 +257,11 @@ Chooser - A system for choosing a value for something.
 
 =head1 VERSION
 
-Version 1.1.1
+Version 1.1.3
 
 =cut
 
-our $VERSION = '1.1.1';
+our $VERSION = '1.1.3';
 
 
 =head1 SYNOPSIS
@@ -296,7 +296,11 @@ second is the choosen value.
 #parse and run a string
 sub choose{
 	my $string=$_[0];
-	
+
+	if (!defined($string)){
+		return (0, undef);
+	};
+
 	my @rawdata=split(/\n/, $string);
 
 	my $value;
@@ -335,7 +339,7 @@ sub choose{
 
 		$int++;
 	};
-	
+
 	#finds the heaviest value
 	my @keys=keys(%values);
 	my $keysInt=0;
@@ -350,6 +354,7 @@ sub choose{
 			$keysInt++;
 		};
 	};
+	print $value;
 	return (1, $value);
 };
 
