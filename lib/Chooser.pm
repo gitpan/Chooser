@@ -253,15 +253,15 @@ sub valueProcess{
 
 =head1 NAME
 
-Chooser - A system for choosing a value for something.
+Chooser - A system for choosing a value for something. Takes a string composed of various tests, arguements, and etc and returns a value based on it.
 
 =head1 VERSION
 
-Version 1.1.3
+Version 1.1.4
 
 =cut
 
-our $VERSION = '1.1.3';
+our $VERSION = '1.1.4';
 
 
 =head1 SYNOPSIS
@@ -354,7 +354,7 @@ sub choose{
 			$keysInt++;
 		};
 	};
-	print $value;
+
 	return (1, $value);
 };
 

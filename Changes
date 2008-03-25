@@ -1,5 +1,10 @@
 Revision history for Chooser
 
+1.1.4	2008-03-23/21:15
+	Clean up the pod a bit.
+	Clean up readme.
+	No longer error on any tests.
+
 1.1.3	2008-03-17/19:50
 		Just noticed the version of 1.1.2 I released was actually 1.1.1 with a different tar name. Fixed.
 
