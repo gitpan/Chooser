@@ -257,11 +257,11 @@ Chooser - A system for choosing a value for something. Takes a string composed o
 
 =head1 VERSION
 
-Version 1.1.4
+Version 1.1.5
 
 =cut
 
-our $VERSION = '1.1.4';
+our $VERSION = '1.1.5';
 
 
 =head1 SYNOPSIS
@@ -272,7 +272,24 @@ the string.
 
     use Chooser;
 
-    my $foo = choose($string);
+	#The irst tests if /test/ matches the hostname. If it does
+	# a value of test is set with a wieght of 42. This makes 
+	#it heavier so even if another is matched, this will be returned.
+	#
+	#The second test checks to make sure that no interfaces have a
+	#CIDR of 192.168.0.0/16. If it does a value of not192168 is returned. 
+	#
+	#The third tests if
+	my $string="hostregex|1|test|42|regex=test\n".
+				"cidr|0|not192168|1|cidr=192.168.0.0/16".
+				"defgateway|0|19216801|1|ip=192.168.0.1"
+
+    my ($success, $choosen) = choose($string);
+    if(!$success){
+    	print "The choosen value is '".$choosen."'\n";
+    }else{
+    	print "Chooser hit a error processing...\n".$string."\n";
+    };
     ...
 
 =head1 EXPORT

@@ -1,5 +1,9 @@
 Revision history for Chooser
 
+1.1.5	2008-04-16/20:00
+		Clean up pod a bit more.
+		A make the documentation a bit more clear.
+
 1.1.4	2008-03-23/21:15
 	Clean up the pod a bit.
 	Clean up readme.
