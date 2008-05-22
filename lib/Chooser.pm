@@ -257,11 +257,11 @@ Chooser - A system for choosing a value for something. Takes a string composed o
 
 =head1 VERSION
 
-Version 1.1.5
+Version 1.1.6
 
 =cut
 
-our $VERSION = '1.1.5';
+our $VERSION = '1.1.6';
 
 
 =head1 SYNOPSIS
