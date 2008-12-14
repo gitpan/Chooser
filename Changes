@@ -1,5 +1,8 @@
 Revision history for Chooser
 
+1.1.7	2008-12-14/7:40
+		-Remove the the pod coverage test.
+
 1.1.6	2008-05-22/7:15
 	Re-roll the tar ball.	
 
